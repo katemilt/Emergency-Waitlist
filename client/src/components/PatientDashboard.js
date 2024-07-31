@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './styles/PDStyle.css'; 
 
 function PatientDashboard() {
   const { patientId } = useParams();
@@ -19,7 +20,12 @@ function PatientDashboard() {
       }
     };
 
+    // Initial fetch
     fetchPosition();
+
+    // Check for updates to position every 30 seconds
+    const intervalId = setInterval(fetchPosition, 30000);
+    return () => clearInterval(intervalId);
   }, [patientId]);
 
   // Calculate estimated wait time (saying 10 mins per queue pos)
@@ -38,19 +44,20 @@ function PatientDashboard() {
 
   return (
     <div className="PatientDashboard">
-      <h1>Patient Dashboard</h1>
+      <h1 className="patient-title">Patient Dashboard</h1>
       {position !== null ? (
-        <div>
-          <p>Your current position in the queue is: {position}</p>
-          <p>Estimated wait time: {estimatedWaitTime} minutes</p>
+        <div className="patient-details">
+          <p className="details">Your current position in the queue is: <strong>{position}</strong></p>
+          <p className="details">Estimated wait time: <strong>{estimatedWaitTime} minutes</strong></p>
         </div>
       ) : (
         <p>Loading your position...</p>
       )}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <button onClick={handleLogout}>Logout</button>
+      {error && <p style={{ color: "#e63946" }}>{error}</p>}
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
     </div>
   );
 }
 
 export default PatientDashboard;
+

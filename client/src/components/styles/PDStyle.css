@@ -1,0 +1,25 @@
+.PatientDashboard {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #edf6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.patient-title {
+    margin-top: 0px;
+    color: #1d3557;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.details {
+    color: #778da9;
+}
+
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "./styles/AdminStyle.css";
 
 function Patient() {
   const navigate = useNavigate();
@@ -22,32 +23,41 @@ function Patient() {
   };
 
   return (
-    <div className="PatientLogin">
-      <h1>Patient Login</h1>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Full Name:</label>
-          <input
-            type="text"
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Code:</label>
-          <input
-            type="text"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            required
-          />
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Login</button>
-      </form>
+    <div className="Login">
+      <div className='login-container'>
+        <h1 className="title">Patient Login</h1>
+        <p className="message">Welcome! Log in to view your estimated wait time:</p>
+        <form onSubmit={handleLogin}>
+            <div className="input-container">
+                <div className="icon">
+                    <i className="fas fa-user"></i>
+                </div>
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={fullname}
+                    onChange={(e) => setFullname(e.target.value)}
+                    required
+                />
+            </div>
+            <div className="input-container">
+                <div className="icon">
+                    <i className="fas fa-lock"></i>
+                </div>
+                <input
+                    type="text"
+                    placeholder="3-character Code"
+                    value={code}
+                    onChange={(e) => setCode(e.target.value)}
+                    required
+                />
+            </div>
+            {error && <p style={{ color: "#e63946" }}>{error}</p>}
+            <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
-  );
+);
 }
 
 export default Patient;

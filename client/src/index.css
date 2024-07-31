@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; 
+}
+
+.inter-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; 
+}

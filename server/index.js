@@ -10,10 +10,10 @@ const port = 5000;
 // Middleware
 app.use(express.json());
 app.use(session({
-    secret: 'your_secret_key',
+    secret: 'secret_key',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Change to true if using HTTPS
+    cookie: { secure: false } 
 }));
 
 // CORS Configuration
@@ -23,17 +23,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-// Test database connection
-app.get("/test-db", async (req, res) => {
-    try {
-        const result = await pool.query("SELECT NOW()");
-        res.json(result.rows[0]);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send("Server error");
-    }
-});
 
 // Admin login
 app.post("/auth/login", async (req, res) => {

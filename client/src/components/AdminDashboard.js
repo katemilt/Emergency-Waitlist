@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './styles/ADStyle.css'; 
 
 function AdminDashboard() {
   const navigate = useNavigate();
@@ -57,23 +58,29 @@ function AdminDashboard() {
 
   return (
     <div className="AdminDashboard">
-      <h1>Admin Dashboard</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <h1 className="admin-title">Admin Dashboard</h1>
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
       <h2>Add Patient</h2>
       <form onSubmit={handleAddPatient}>
-        <div>
-          <label>Full Name:</label>
+        <div className="input-container">
+            <div className="icon">
+                <i className="fas fa-user"></i>
+            </div>
           <input
             type="text"
+            placeholder="Full Name"
             value={fullname}
             onChange={(e) => setFullname(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>Severity (1-10):</label>
+        <div className="input-container">
+            <div className="icon">
+                <i className="fas fa-list-ol"></i>
+            </div>
           <input
             type="number"
+            placeholder="Severity (1-10)"
             value={severity}
             onChange={(e) => setSeverity(e.target.value)}
             required
@@ -81,8 +88,8 @@ function AdminDashboard() {
             max="10"
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Add Patient</button>
+        {error && <p className="error">{error}</p>}
+        <button className="add-btn" type="submit">Add Patient</button>
       </form>
       <h2>Current Patients</h2>
       <table>
@@ -103,7 +110,7 @@ function AdminDashboard() {
               <td>{patient.severity}</td>
               <td>{new Date(patient.join_time).toLocaleString()}</td>
               <td>
-                <button onClick={() => handleDeletePatient(patient.id)}>Remove</button>
+                <button className="remove-btn" onClick={() => handleDeletePatient(patient.id)}>Remove</button>
               </td>
             </tr>
           ))}

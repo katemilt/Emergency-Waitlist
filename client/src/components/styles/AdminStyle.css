@@ -1,0 +1,64 @@
+.Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #bdddec;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #778da9; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 400px;
+    width: 100%;
+}
+
+.title {
+    font-size: 3vw;
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+.message {
+    font-size: 1.2vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.input-container .icon {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 40px; 
+    height: 40px;
+    color: #e0e1dd;
+}
+
+input {
+    padding: 10px;
+    padding-left: 40px; 
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; 
+    box-sizing: border-box;
+}
