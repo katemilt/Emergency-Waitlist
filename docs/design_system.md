@@ -20,9 +20,12 @@
 ![alt text](design_system/adminlogin.PNG) ![alt text](design_system/patientlogin.PNG)
 
 ### Admin Dashboard
-- After logging in as the admin, the admin users can see a table of all the currents patients and remove any that have been served, and they can add new patients. When adding a new patient they just need to enter the full name and the severity of their injuries (1-10), the 3-character code then gets generated automatically for that patient. The admin has the option to logout at all times.
+- After logging in as the admin, the admin users can see a table of all the currents patients and remove any that have been served, and they can add new patients. When adding a new patient they just need to enter the full name and the severity of their injuries (1-10), the 3-character code then gets generated automatically for that patient.
+- The queue puts patients with the highest severity at the top. If two patients have injuries of the same severity, the one who joined the queue first is given priority.
+- The admin has the option to logout at all times.
 ![alt text](design_system/admindb.PNG)
 
 ### Patient Dashboard
-- After logging in as a patient, the patient users can see their queue position as well as their estimated wait time. For simplicity, the wait time is calculated as 10 minutes per position in the queue, so if the patient is first in the queue then their wait time is 10 minutes, if they're second in the queue then it's 20 minutes, and so on. The queue position and wait time is updated every 30 seconds to see if any changes have been made. The patient has the option to logout at all times.
+- After logging in as a patient, the patient users can see their queue position as well as their estimated wait time. For simplicity, the wait time is calculated as 10 minutes per position in the queue, so if the patient is first in the queue then their wait time is 10 minutes, if they're second in the queue then it's 20 minutes, and so on. The queue position and wait time is updated every 30 seconds to see if any changes have been made. 
+- The patient has the option to logout at all times.
 ![alt text](design_system/patientdb.PNG)
