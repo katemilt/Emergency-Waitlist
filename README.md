@@ -1,7 +1,7 @@
 # Emergency-Waitlist
 
 ## About 
-This web application is a hospital triage application service which allows admin users to view their queue of current patients, and add and remove patients from this queue as needed. All patients are given a severity ranking for their injuries (1-10) when they are added to the queue, which determines their priority in the queue. This application also allows patients to login with their full names and a 3-character code, and view their queue positions and estimated wait times. See the admin and patient functionality below:
+This web application is a hospital triage application service which allows admin users to view their queue of current patients, and add and remove patients from this queue as needed. All patients are given a severity ranking for their injuries (1-10) when they are added to the queue, which determines their priority in the queue. This application also allows patients to login with their full names and a 3-character code, and view their queue positions and estimated wait times. See the admin and patient functionality below (screenshots of all pages can be seen in the docs/design_system directory):
 ![alt text](docs/design_system/admindb.PNG) ![alt text](docs/design_system/patientdb.PNG)
 
 ## How to Open the Application
